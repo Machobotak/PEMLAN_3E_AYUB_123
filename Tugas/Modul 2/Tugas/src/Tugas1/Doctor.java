@@ -1,0 +1,45 @@
+package Tugas1;
+
+public class Doctor {
+    private static final double BONUS_RATE = 0.08;//constant
+    private String name;//encapsulated
+    private int id;
+    private double salary;
+    private String specialization;
+
+    public Doctor(String name, int id, double salary, String specialization) {
+        this.setName(name);
+        this.id = id;
+        this.salary = salary;
+        this.specialization = specialization;
+    }
+
+    public void applyBonus(){
+        salary+= calculateBonus();//inline varible
+        System.out.println("Bonus applied ! New Salary : "+salary);
+    }
+
+    private double calculateBonus() {
+        return salary * BONUS_RATE;
+    }
+
+    public void printDetails(){
+        System.out.println("Doctor ID: "+id);
+        System.out.println("Name: "+ getName());
+        System.out.println("Specialization: "+specialization);
+        System.out.println("Salary: $"+salary);
+    }
+
+    public void updateSpecialization(String newSpecialization){
+        specialization = newSpecialization;
+        System.out.println("Specialization updated to: "+specialization);
+    }
+
+    public String getName() {//encapsulte
+        return name;
+    }
+
+    public void setName(String name) {//encapsulate
+        this.name = name;
+    }
+}
